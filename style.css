@@ -15,23 +15,24 @@ body {
 }
 
 .calculadora_cuerpo{
-  width: 400px;
+  width: 380px;
   height: 550px;
   background-color: var(--clr2);
   border-radius: 5px;
-  border: solid 2px black;
+  border: solid 1px black;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(4, 1fr)  ;
   grid-template-rows: repeat(6, 1fr);
   padding: 10px;
+
 }
 
 .calculadora_cuerpo div{
   background-color: var(--clr4);
   color: white;
   border-radius: 5px;
-  border: solid 2px black;
+  border: solid 1px black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,14 +43,13 @@ body {
 
 /*Primera vez usando esta clase*/
 .calculadora_cuerpo div:hover:not(.display) {
-  /*opacity: 2;*/
-  border: solid 2px white;
+  border: solid 1px white;
 }
 
 .calculadora_cuerpo div button{
   width: 100%;
   height: 100%;
-  /*border-radius: 5px;*/
+  border: none;
   background-color: transparent;
   font-size: 25px;
   font-family: sans-serif;
@@ -65,17 +65,36 @@ body {
   height: 100px;
   margin-bottom: 20px;
   margin-top: 10px;
+  
+
 }
 
 .display_secunday{
+  max-height: 20px;
+  width: 310px;
   position: absolute;
   right: 29px;
   bottom: 15%;
-  height: 20px;
-  width: 90%;
   font-size: 15px;
   background: white;
   color: black;
+  text-align: right;
+  opacity: 0.5;
+  overflow: auto;
+}
+
+.display_secunday::-webkit-scrollbar {
+  width: 0px;               
+}
+
+.display_secunday_up{
+  position: absolute;  
+  height: 20px;
+  width: 90%;
+  top: 15px;
+  right: 29px;
+  font-size: 13px;
+  color: red;
   text-align: right;
   opacity: 0.5;
 }
@@ -88,6 +107,11 @@ body {
   text-align:right;
   outline: none;
   caret-color: white;
+  resize: none;
+  border-top: solid 3px black;
+  border-left: solid 3px black;
+  border-radius: 5px;
+  /*border: none;*/
 }
 
 #display_id:focus {
@@ -188,4 +212,77 @@ body {
   grid-row-start: 3;
   grid-row-end: 4;
 }
+
+
+/*Cambios commit 2*/
+/*varius box shadow for 3d effect*/
+.calculadora_cuerpo{
+  box-shadow:1px 1px var(--clr4), 2px 2px var(--clr4), 3px 3px var(--clr4), 4px 4px black, 5px 5px var(--clr4), 6px 6px var(--clr4), 7px 7px var(--clr4), 8px 8px black;
+}
+
+.num_0,
+.num_1,
+.num_2,
+.num_3,
+.num_4,
+.num_5,
+.num_6,
+.num_7,
+.num_8,
+.num_9,
+.suma,
+.resta,
+.division,
+.multiplicacion,
+.coma{
+  box-shadow: 1px 1px var(--clr4),
+              2px 2px var(--clr4),
+              3px 3px var(--clr4),
+              4px 4px var(--clr4);
+}
+
+.igual,
+.all_clear,
+.clear_entry{
+  box-shadow: 1px 1px var(--clr3),
+              2px 2px var(--clr3),
+              3px 3px var(--clr3),
+              4px 4px var(--clr3);
+}
+
+/*Animacion boton*/
+.num_0:active,
+.num_1:active,
+.num_2:active,
+.num_3:active,
+.num_4:active,
+.num_5:active,
+.num_6:active,
+.num_7:active,
+.num_8:active,
+.num_9:active,
+.suma:active,
+.resta:active,
+.division:active,
+.multiplicacion:active,
+.coma:active,
+.igual:active,
+.all_clear:active,
+.clear_entry:active {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    box-shadow: none;
+}
+
+.my_tag{
+  position: fixed;
+  top: 57px;
+  font-family: OCR A Std, monospace;
+  font-weight: 700;
+  font-size: 14px;
+  font-stretch: ultra-condensed;
+}
+
+
 
